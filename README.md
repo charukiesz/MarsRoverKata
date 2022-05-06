@@ -26,33 +26,34 @@ coordinate point/
 M Moves the Rover forward by one grid point, maintaining the same
 heading (i.e. from where the Rover is facing (its orientation)).
 
-**N.B.** Assume that the square directly North from (x, y) is (x, y+1).
-Inputs into the Program
-First Line of Input to the Program
-The first line inputted into the program represents the upper-right coordinates of the Plateau.
-5 5
-This Plateau has maximum (x, y) co-ordinates of (5, 5).
-N.B. Assume that the lower-left coordinates is (0, 0).
-Subsequent Lines of Input into the Program - Input to Rovers
-This represents the instructions to move the rovers.
-Each rover receives two lines of input.
-First Line of Input to a Rover
+**N.B.** 
+Assume that the square directly North from (x, y) is (x, y+1).  
+Inputs into the Program  
+First Line of Input to the Program  
+The first line inputted into the program represents the upper-right coordinates of the Plateau.  
+5 5  
+This Plateau has maximum (x, y) co-ordinates of (5, 5).  
+N.B. Assume that the lower-left coordinates is (0, 0).  
+Subsequent Lines of Input into the Program - Input to Rovers  
+This represents the instructions to move the rovers.  
+Each rover receives two lines of input.  
+First Line of Input to a Rove  r
 The Rover’s position is represented by two integers representing the X and Y coordinates and a letter representing where the Rover is facing (its
-orientation).
-1 2 N
-Second Line of Input to a Rover
-A string of letters representing the instructions to move the Rover around the Plateau.
-Movement Rules
-Rovers move sequentially, this means that the first Rover needs to finish moving first before the next one can move.
-Output
-For each Rover, the output represents its final position (final coordinates and where it is facing).
-Example Test Case
-Lines of Input to the Program:
-5 5
-1 2 N
-LMLMLMLMM
-3 3 E
-MMRMMRMRRM
-Expected Output:
-1 3 N
-5 1 E
+orientation).  
+1 2 N  
+Second Line of Input to a Rover  
+A string of letters representing the instructions to move the Rover around the Plateau.  
+Movement Rule  s
+Rovers move sequentially, this means that the first Rover needs to finish moving first before the next one can move.  
+Output  
+For each Rover, the output represents its final position (final coordinates and where it is facing).  
+*Example Test Case*
+Lines of Input to the Program:  
+5 5  
+1 2 N  
+LMLMLMLMM  
+3 3 E  
+MMRMMRMRRM  
+Expected Output:  
+1 3 N  
+5 1 E  
