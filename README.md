@@ -1,10 +1,10 @@
-#Mars Rover Kata
+# Mars Rover Kata
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-##Task
+## Task
 
-###Setting the Scene
+### Setting the Scene
 You have been asked to create a program to move rovers around the surface of Mars!
 The surface of Mars is represented by a Plateau, you can make the assumption that the Plateau is a square/rectangular grid for the purpose of
 this task.
