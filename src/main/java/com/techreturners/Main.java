@@ -1,11 +1,10 @@
-import java.util.*;
+package com.techreturners;
 
 import java.util.Scanner;
 
 public class Main {
 
-    public static boolean getUserInput()
-    {
+    public static boolean getUserInput() {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Welcome to the Mars Rover Navigation experience...");
         System.out.println("Please enter the dimensions of the plateau, as x and y values (for example 10 10):");
@@ -21,21 +20,20 @@ public class Main {
         System.out.println("Please enter your instructions, in the form LMRMMMLMM:");
         String instructions = myScanner.nextLine();
         PlateauPosition finalPosition = marsRover.ParseInstructions(instructions);
-        if (finalPosition.getErrorMessage().length() > 0)
-        {
+        if (finalPosition.getErrorMessage().length() > 0) {
             System.out.println(finalPosition.getErrorMessage());
             return false;
 
-        }else {
+        } else {
             System.out.println("The final position of the Mars Rover is " + (finalPosition.getPlateauPosition()));
+            myScanner.close();
             return true;
         }
     }
 
     public static void main(String[] args) {
         boolean result = getUserInput();
-        while (!result)
-        {
+        while (!result) {
             result = getUserInput();
         }
     }

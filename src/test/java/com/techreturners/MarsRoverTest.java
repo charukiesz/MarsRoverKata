@@ -1,24 +1,22 @@
+package com.techreturners;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-
 
 
 public class MarsRoverTest {
+
 
     private Plateau plateau;
 
     @BeforeEach
     public void setUpPlateau() {
-        plateau = new Plateau(5,5);
+        plateau = new Plateau(5, 5);
     }
 
-
-
     @Test
-    public void checkMarsRoverCanMoveOneGridPointIfFacingNorth(){
+    public void checkMarsRoverCanMoveOneGridPointIfFacingNorth() {
         //Arrange
         MarsRover marsRover = new MarsRover("1 2 N", plateau);
         String expectedResult = "1 3 N";
@@ -30,7 +28,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void checkMarsRoverCanTurnClockwiseFromNorthToEast(){
+    public void checkMarsRoverCanTurnClockwiseFromNorthToEast() {
         //Arrange
         MarsRover marsRover = new MarsRover("1 2 N", plateau);
         char expectedResult = 'E';
@@ -42,7 +40,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void checkMarsRoverCanTurnAntiClockwiseFromNorthToWest(){
+    public void checkMarsRoverCanTurnAntiClockwiseFromNorthToWest() {
         //Arrange
         MarsRover marsRover = new MarsRover("1 2 N", plateau);
         char expectedResult = 'W';
@@ -54,7 +52,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void checkMarsRoverCanTurnRightThenMoveOneSquare(){
+    public void checkMarsRoverCanTurnRightThenMoveOneSquare() {
         //Arrange
         MarsRover marsRover = new MarsRover("1 2 N", plateau);
         String expectedResult = "2 2 E";
@@ -65,10 +63,10 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void checkMarsRoverCanNotMoveOffThePlateauBeyondZeroX(){
+    public void checkMarsRoverCanNotMoveOffThePlateauBeyondZeroX() {
         //Arrange
         MarsRover marsRover = new MarsRover("1 2 N", plateau);
-        String expectedResult = "Out of range. Try again.";
+        String expectedResult = "Cannot move off Plateau. Last move aborted. Rover coordinates: 0 2 W";
         //Act
         PlateauPosition actual = marsRover.ParseInstructions("LMM");
         //Assert
@@ -76,7 +74,41 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void checkMarsRoverCanMoveLMLMLMLMM(){
+    public void checkMarsRoverCanNotMoveOffThePlateauBeyondZeroY() {
+        //Arrange
+        MarsRover marsRover = new MarsRover("1 2 N", plateau);
+        String expectedResult = "Cannot move off Plateau. Last move aborted. Rover coordinates: 0 2 W";
+        //Act
+        PlateauPosition actual = marsRover.ParseInstructions("LMMMM");
+        //Assert
+        Assertions.assertEquals(expectedResult, actual.getErrorMessage());
+    }
+
+    @Test
+    public void checkMarsRoverCanNotMoveOffThePlateauBeyondFiveX() {
+        //Arrange
+        MarsRover marsRover = new MarsRover("1 2 N", plateau);
+        String expectedResult = "Cannot move off Plateau. Last move aborted. Rover coordinates: 5 2 E";
+        //Act
+        PlateauPosition actual = marsRover.ParseInstructions("RMMMMM");
+        //Assert
+        Assertions.assertEquals(expectedResult, actual.getErrorMessage());
+    }
+
+    @Test
+    public void checkMarsRoverCanNotMoveOffThePlateauBeyondFiveY() {
+        //Arrange
+        MarsRover marsRover = new MarsRover("1 2 N", plateau);
+        String expectedResult = "Cannot move off Plateau. Last move aborted. Rover coordinates: 1 5 N";
+        //Act
+        PlateauPosition actual = marsRover.ParseInstructions("MMMMM");
+        //Assert
+        Assertions.assertEquals(expectedResult, actual.getErrorMessage());
+    }
+
+
+    @Test
+    public void checkMarsRoverCanMoveLMLMLMLMM() {
         //Arrange
         MarsRover marsRover = new MarsRover("1 2 N", plateau);
         String expectedResult = "1 3 N";
@@ -87,7 +119,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void checkMarsRoverCanMoveMMRMMRMRRM(){
+    public void checkMarsRoverCanMoveMMRMMRMRRM() {
         //Arrange
         MarsRover marsRover = new MarsRover("3 3 E", plateau);
         String expectedResult = "5 1 E";
@@ -96,8 +128,6 @@ public class MarsRoverTest {
         //Assert
         Assertions.assertEquals(expectedResult, actual.getPlateauPosition());
     }
-
-
 
 
 }

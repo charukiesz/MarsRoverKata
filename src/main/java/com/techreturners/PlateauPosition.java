@@ -1,30 +1,31 @@
+package com.techreturners;
+
 public class PlateauPosition {
 
-    public int x;
-    public int y;
+    protected int x;
+    protected int y;
     public char compass;
-    public String currentPosition;
-    private String errorMessage ="";
+    private String errorMessage = "";
 
-    public PlateauPosition(int x, int y, char compass){
+    public PlateauPosition(int x, int y, char compass) {
         this.x = x;
         this.y = y;
         this.compass = compass;
     }
 
-//Getters
-    public String getPlateauPosition(){
-        currentPosition = Integer.toString(this.x) + " " + Integer.toString(this.y) + " " + Character.toString(this.compass);
-        return currentPosition;
+    //Getters
+    public String getPlateauPosition() {
+        return this.x + " " + this.y + " " + this.compass;
+
     }
 
-    public String getErrorMessage(){
+    public String getErrorMessage() {
         return errorMessage;
     }
 
     //Setters
 
-    public void setErrorMessage(String message){
+    public void setErrorMessage(String message) {
         errorMessage = message;
     }
 
@@ -34,6 +35,7 @@ public class PlateauPosition {
         for (char c : cardinal) {
             if (compass == c) {
                 isValid = true;
+                break;
             }
         }
         return isValid;
