@@ -33,6 +33,8 @@ First Line of Input to the Program
 The first line inputted into the program represents the upper-right coordinates of the Plateau.  
 5 5  
 This Plateau has maximum (x, y) co-ordinates of (5, 5).  
+
+
 N.B. Assume that the lower-left coordinates is (0, 0).  
 Subsequent Lines of Input into the Program - Input to Rovers  
 This represents the instructions to move the rovers.  
@@ -57,3 +59,14 @@ MMRMMRMRRM
 Expected Output:  
 1 3 N  
 5 1 E  
+
+### Solution
+Initially, as a first approach, Test Driven Development was implemented. However, once the codebase had been established to cover some test case scenarios, maintaining this proved more challenging. This was due to the balance between development being driven by UML design versus design being driven by tests. Hence, I got so carried away with coding that commits were not as frequent as they should be. 
+
+### To Dos
+* Wrap the plateau so that there are no plateau boundaries.
+* Add functionality to include multiple Mars Rovers.
+* Add functionality to prevent the multiple Mars Rovers from colliding with each other.
+
+### Conclusion
+This project provided a good experience in the way challenges that are faced when approaching software design and has made me think of software design in a whole new way.
